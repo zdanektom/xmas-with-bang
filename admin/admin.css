@@ -1,0 +1,31 @@
+.admin .bg{display:none}
+body.admin{background:#0b0b0b}
+.wrap.wide{max-width:1100px}
+.btn.sm{min-height:40px;padding:6px 12px;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.stat{background:#151515;border:1px solid var(--line);border-radius:14px;padding:14px}
+.stat b{display:block;font:700 34px Oswald,sans-serif}
+.stat span{color:var(--muted);font-size:13px}
+.stat.red{background:var(--red);border-color:var(--red)}
+.stat.red span{color:#fff}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{background:#1a1a1a;color:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 16px;font:600 16px Oswald,sans-serif;text-transform:uppercase;cursor:pointer}
+.tabs button[aria-selected=true]{background:#fff;color:#000}
+.admin .card{background:#121212;backdrop-filter:none}
+.search{flex:1;min-width:200px;min-height:42px;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:#1b1b1b;color:#fff;font-size:16px}
+.sel,.inp{min-height:42px;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:#1b1b1b;color:#fff;font-size:16px}
+.inp{width:100%;font-family:inherit}
+.tablewrap{overflow:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font:600 13px Oswald,sans-serif;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:#121212}
+td input{width:20px;height:20px;accent-color:var(--red)}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;background:#2a2a2a;font-size:12px}
+.pill.win{background:var(--red)}
+.drawres{margin:16px 0;padding:18px;border-radius:14px;background:#1b1b1b;border:2px solid var(--red);text-align:center}
+.drawres .who{font:700 34px Oswald,sans-serif;text-transform:uppercase}
+.chanlist{list-style:none;padding:0;margin:10px 0}
+.chanlist li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.chanlist li.done{opacity:.45}
+.chanlist .nm{flex:1;min-width:160px}
+.icon-btn{background:none;border:0;color:var(--muted);cursor:pointer;font-size:13px;text-decoration:underline}

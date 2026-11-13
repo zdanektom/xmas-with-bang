@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Panel – Xmas with Bang</title>
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../styles.css?v=1">
+<link rel="stylesheet" href="admin.css?v=1">
+</head>
+<body class="admin">
+<main class="wrap wide">
+  <div class="top">
+    <img src="../assets/logo-sm.png" alt="Bang Bang Burger" width="70" height="64">
+    <div class="row"><span class="cond" style="font-size:22px">Xmas with Bang 💥 · Panel</span>
+    <button class="btn ghost sm hidden" id="logout" type="button">Wyloguj</button></div>
+  </div>
+
+  <section class="card" id="loginCard">
+    <h2>Logowanie</h2>
+    <p class="small" id="noEndpoint" hidden>Backend nie jest jeszcze podłączony (ENDPOINT w config.js jest pusty). Zobacz SETUP.md.</p>
+    <form id="loginForm">
+      <label for="pw">Hasło</label>
+      <input id="pw" type="password" autocomplete="current-password" required style="width:100%;min-height:50px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font-size:17px">
+      <p class="err" id="loginErr" role="alert"></p>
+      <button class="btn block" type="submit">Zaloguj</button>
+    </form>
+  </section>
+
+  <div id="app" class="hidden">
+    <section class="stats" id="stats"></section>
+    <nav class="tabs" role="tablist">
+      <button type="button" data-tab="entries" aria-selected="true">Zgłoszenia</button>
+      <button type="button" data-tab="draw" aria-selected="false">Losowanie</button>
+      <button type="button" data-tab="send" aria-selected="false">Wyślij wiadomość</button>
+    </nav>
+
+    <section class="card tab" id="tab-entries">
+      <div class="row">
+        <input id="q" type="search" placeholder="Szukaj: imię, e-mail, telefon, @instagram" class="search">
+        <select id="filter" class="sel">
+          <option value="all">Wszyscy</option><option value="consent">Ze zgodą marketingową</option>
+          <option value="verified">Zweryfikowani (#XmasWithBang)</option><option value="qr">Z kodu QR</option>
+        </select>
+        <button class="btn sm" id="csv" type="button">Eksport CSV</button>
+        <button class="btn ghost sm" id="refresh" type="button">Odśwież</button>
+        <a class="btn ghost sm" id="sheetLink" target="_blank" rel="noopener">Arkusz Google</a>
+      </div>
+      <p class="small" id="count"></p>
+      <div class="tablewrap"><table id="table"><thead><tr>
+        <th>Kiedy</th><th>Imię</th><th>Telefon</th><th>E-mail</th><th>Instagram</th><th>Kontakt</th><th>Zgoda</th><th title="Sprawdzone oznaczenie na Instagramie">Zweryf.</th><th></th>
+      </tr></thead><tbody></tbody></table></div>
+      <p class="small">„Zweryf.” zaznacz, gdy sprawdzisz na Instagramie, że osoba obserwuje profil i oznaczyła zdjęcie #XmasWithBang.</p>
+    </section>
+
+    <section class="card tab hidden" id="tab-draw">
+      <h2>Losowanie zwycięzcy</h2>
+      <label class="check"><input type="checkbox" id="onlyVerified" checked> Losuj tylko spośród zweryfikowanych</label>
+      <p class="small" id="poolInfo"></p>
+      <button class="btn" id="drawBtn" type="button">🎲 Losuj</button>
+      <div id="drawResult" class="drawres hidden"></div>
+      <p class="small">Losowanie używa kryptograficznie losowej liczby (crypto.getRandomValues). Każda osoba = 1 los. Zwycięzcy: <span id="winners">–</span></p>
+    </section>
+
+    <section class="card tab hidden" id="tab-send">
+      <h2>Wiadomość do wszystkich</h2>
+      <p class="small">Wysyłamy tylko do osób, które zaznaczyły zgodę marketingową i się nie wypisały (wymóg UK GDPR/PECR). <b>{name}</b> zostanie zastąpione imieniem.</p>
+      <label for="subj">Temat (e-mail)</label>
+      <input id="subj" type="text" class="inp" maxlength="150" value="🎄 Xmas with Bang 💥">
+      <label for="msg">Treść</label>
+      <textarea id="msg" rows="6" class="inp" maxlength="1500">Hi {name}! 🎄 This week at Bang Bang Burger: …</textarea>
+      <label for="scope">E-mail wyślij do</label>
+      <select id="scope" class="sel">
+        <option value="email_pref">osób, które wybrały e-mail</option>
+        <option value="all_consented">wszystkich ze zgodą (każdy podał e-mail)</option>
+      </select>
+      <div class="row" style="margin-top:12px">
+        <button class="btn ghost" id="testBtn" type="button">Wyślij test do mnie</button>
+        <button class="btn" id="sendBtn" type="button">Wyślij e-mail do wszystkich</button>
+      </div>
+      <p class="small" id="quota"></p>
+      <div id="sendResult" class="notice hidden"></div>
+
+      <h3 style="margin-top:26px">SMS · WhatsApp · Instagram DM</h3>
+      <p class="small">Masowe SMS/WhatsApp wymagają płatnego dostawcy (np. Twilio). Tutaj każdy kontakt ma gotowy przycisk z wpisaną wiadomością – klikasz, telefon otwiera czat, naciskasz „Wyślij”. Postęp zapisuje się na tym urządzeniu.</p>
+      <div class="row">
+        <select id="chan" class="sel"><option value="whatsapp">WhatsApp</option><option value="sms">SMS</option><option value="instagram">Instagram DM</option></select>
+        <button class="btn ghost sm" id="copyNums" type="button">Kopiuj numery</button>
+        <button class="btn ghost sm" id="copyMsg" type="button">Kopiuj treść</button>
+        <button class="btn ghost sm" id="resetDone" type="button">Wyczyść „wysłane”</button>
+      </div>
+      <p class="small" id="chanInfo"></p>
+      <ul id="chanList" class="chanlist"></ul>
+      <h3 style="margin-top:26px">Historia e-maili</h3>
+      <ul id="history" class="small"></ul>
+    </section>
+  </div>
+</main>
+<script src="../config.js?v=1"></script>
+<script src="admin.js?v=1"></script>
+</body>
+</html>

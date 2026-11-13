@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Xmas with Bang 💥 – Win an Apple Watch | Bang Bang Burger</title>
+<meta name="description" content="Follow Bang Bang Burger on Instagram, post a photo with #XmasWithBang and enter to win an Apple Watch.">
+<meta property="og:title" content="Xmas with Bang 💥 – Win an Apple Watch">
+<meta property="og:description" content="Follow @bangbangburgeruk, tag #XmasWithBang and enter. Bang Bang Burger, London.">
+<meta property="og:image" content="https://zdanektom.github.io/xmas-with-bang/assets/og.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<main class="wrap">
+  <div class="top">
+    <a href="https://bangbangburger.co.uk/" aria-label="Bang Bang Burger"><img src="assets/logo-sm.png" alt="Bang Bang Burger" width="70" height="64"></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="pl" aria-pressed="false">PL</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <span class="kicker" data-t="kicker">Christmas giveaway</span>
+    <h1>Xmas with Bang <span class="boom">💥</span></h1>
+    <p class="prize" data-t="prize" data-html>Win an <b>Apple Watch</b></p>
+    <p class="closes" id="closes"></p>
+  </section>
+
+  <div id="flow">
+    <section class="card step">
+      <div class="num">1</div>
+      <div>
+        <h2 data-t="s1h">Follow us on Instagram</h2>
+        <p data-t="s1p" data-html>Follow <b>@bangbangburgeruk</b>.</p>
+        <a class="btn" id="igFollow" href="https://www.instagram.com/bangbangburgeruk/" target="_blank" rel="noopener" data-t="s1b">Follow @bangbangburgeruk</a>
+      </div>
+    </section>
+
+    <section class="card step">
+      <div class="num">2</div>
+      <div>
+        <h2 data-t="s2h">Post a photo &amp; tag us</h2>
+        <p data-t="s2p" data-html>Share a photo from Bang Bang (post or story), tag <b>@bangbangburgeruk</b> and add the hashtag:</p>
+        <div class="row"><span class="tag" id="tag">#XmasWithBang</span><button class="btn ghost" type="button" id="copyTag" data-t="copy">Copy</button></div>
+        <p class="small" style="margin-top:10px" data-t="s2n">Public accounts only, so we can see your tag.</p>
+      </div>
+    </section>
+
+    <section class="card step">
+      <div class="num">3</div>
+      <div style="flex:1;min-width:0">
+        <h2 data-t="s3h">Enter your details</h2>
+        <div class="notice hidden" id="notOpen" data-t="notOpen">Entries open very soon – check back shortly!</div>
+        <div class="notice hidden" id="closedMsg" data-t="closedMsg">This giveaway has closed. Thanks for taking part!</div>
+        <form id="form" novalidate>
+          <label for="name" data-t="fName">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required>
+          <label for="phone" data-t="fPhone">Phone number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="07… / +44…" maxlength="30" required>
+          <label for="email" data-t="fEmail">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required>
+          <label for="instagram"><span data-t="fIg">Instagram username</span> <span class="opt" data-t="fIgOpt">(so we can find your tag)</span></label>
+          <input id="instagram" name="instagram" type="text" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="@yourname" maxlength="40">
+          <fieldset class="chips" id="contact">
+            <legend data-t="fContact">How should we contact you?</legend>
+            <label><input type="radio" name="contact" value="sms" required> SMS</label>
+            <label><input type="radio" name="contact" value="whatsapp"> WhatsApp</label>
+            <label><input type="radio" name="contact" value="email"> Email</label>
+            <label><input type="radio" name="contact" value="instagram"> Instagram DM</label>
+          </fieldset>
+          <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <label class="check"><input type="checkbox" id="terms" required> <span data-t="cTerms" data-html>I’m 18+, live in the UK and accept the <a href="terms.html" target="_blank">Terms &amp; Conditions</a> and <a href="privacy.html" target="_blank">Privacy Notice</a>.</span></label>
+          <label class="check"><input type="checkbox" id="marketing"> <span data-t="cMkt">Yes, Bang Bang Burger may send me offers and news by my chosen method. I can unsubscribe any time. (Optional – it doesn’t affect your entry.)</span></label>
+          <p class="err" id="err" role="alert"></p>
+          <button class="btn block" id="submit" type="submit" style="margin-top:12px" data-t="submit">Enter the giveaway</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <section class="card success hidden" id="success" tabindex="-1">
+    <div class="big">🎄💥</div>
+    <h2 data-t="okH">You’re in!</h2>
+    <p data-t="okP" data-html>Good luck! Don’t forget: follow <b>@bangbangburgeruk</b> and post your photo with <b>#XmasWithBang</b> before the closing date – we check tags before drawing the winner.</p>
+    <p class="small" id="dupMsg" data-t="dup" hidden>You were already entered – one entry per person.</p>
+    <div class="row" style="justify-content:center;margin-top:12px">
+      <a class="btn" href="https://www.instagram.com/bangbangburgeruk/" target="_blank" rel="noopener" data-t="okIg">Open Instagram</a>
+      <button class="btn ghost" type="button" id="copyTag2" data-t="copyTag">Copy #XmasWithBang</button>
+    </div>
+  </section>
+
+  <footer>
+    <p data-t="foot" data-html>No purchase necessary. Not sponsored, endorsed or administered by, or associated with, Instagram/Meta or Apple.</p>
+    <p><a href="terms.html" data-t="tc">Terms &amp; Conditions</a> · <a href="privacy.html" data-t="pn">Privacy Notice</a> · <a href="https://bangbangburger.co.uk/">bangbangburger.co.uk</a></p>
+  </footer>
+</main>
+<script src="config.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
