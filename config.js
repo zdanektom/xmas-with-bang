@@ -4,9 +4,9 @@ window.XMAS_CONFIG = {
   ENDPOINT: '',
   INSTAGRAM_HANDLE: 'bangbangburgeruk',          // verified: instagram.com/bangbangburgeruk
   HASHTAG: 'XmasWithBang',                       // hashtags cannot contain spaces
-  CLOSES_AT: '2026-12-21T23:59:00Z',             // keep in sync with backend/Code.gs CLOSES_AT
-  DRAW_DATE: '2026-12-22',
-  PRIZE: 'Apple Watch',
+  CLOSES_AT: '2026-12-25T12:00:00Z',             // keep in sync with backend/Code.gs CLOSES_AT
+  DRAW_DATE: '2026-12-25',              // draw + winner announcement, same day after closing
+  PRIZE: 'Apple Watch Series 11',
   PROMOTER: 'Bang Bang Burger',
   WEBSITE: 'https://bangbangburger.co.uk/',
   CONTACT_EMAIL: ''                              // optional public contact email for T&Cs / privacy requests (empty = Instagram DM)

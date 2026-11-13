@@ -16,7 +16,7 @@
 // SHA-256 (hex) of the admin password. Generate: echo -n 'your password' | sha256sum
 const ADMIN_PASSWORD_SHA256 = 'PASTE_SHA256_HEX_HERE';
 // Closing date for entries (ISO, UTC). Keep in sync with config.js.
-const CLOSES_AT = '2026-12-21T23:59:00Z';
+const CLOSES_AT = '2026-12-25T12:00:00Z';
 const PROMO_NAME = 'Xmas with Bang';
 const SENDER_NAME = 'Bang Bang Burger';
 const SESSION_HOURS = 8;

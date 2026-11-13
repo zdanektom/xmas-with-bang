@@ -4,7 +4,7 @@
   var $ = function (s) { return document.querySelector(s); };
   var T = {
     pl: {
-      kicker: 'Świąteczny konkurs', prize: 'Wygraj <b>Apple Watch</b>',
+      kicker: 'Świąteczny konkurs', prize: 'Wygraj <b>Apple Watch Series&nbsp;11</b>',
       s1h: 'Obserwuj nas na Instagramie', s1p: 'Zaobserwuj <b>@bangbangburgeruk</b>.', s1b: 'Obserwuj @bangbangburgeruk',
       s2h: 'Wrzuć zdjęcie i oznacz nas', s2p: 'Opublikuj zdjęcie z Bang Bang (post lub relacja), oznacz <b>@bangbangburgeruk</b> i dodaj hashtag:',
       s2n: 'Tylko konta publiczne – musimy widzieć Twoje oznaczenie.', copy: 'Kopiuj', copyTag: 'Kopiuj #XmasWithBang', copied: 'Skopiowano!',
@@ -17,13 +17,13 @@
       okP: 'Powodzenia! Pamiętaj: obserwuj <b>@bangbangburgeruk</b> i wrzuć zdjęcie z <b>#XmasWithBang</b> przed końcem konkursu – sprawdzamy oznaczenia przed losowaniem.',
       dup: 'Już bierzesz udział – jedno zgłoszenie na osobę.', okIg: 'Otwórz Instagram',
       foot: 'Zakup nie jest wymagany. Konkurs nie jest sponsorowany, popierany ani prowadzony przez Instagram/Meta ani Apple i nie jest z nimi powiązany.',
-      tc: 'Regulamin', pn: 'Prywatność', closes: 'Zgłoszenia do {d}', closedOn: 'Zakończono {d}',
+      tc: 'Regulamin', pn: 'Prywatność', closes: 'Zgłoszenia do {d} · losowanie i ogłoszenie zwycięzcy 25 grudnia', closedOn: 'Zakończono {d}',
       eName: 'Wpisz swoje imię.', ePhone: 'Wpisz poprawny numer telefonu.', eEmail: 'Wpisz poprawny e-mail.', eContact: 'Wybierz formę kontaktu.',
       eIg: 'Wpisz nazwę na Instagramie (wybrano kontakt przez Instagram).', eTerms: 'Zaakceptuj regulamin, aby wziąć udział.',
       eNet: 'Nie udało się wysłać. Sprawdź internet i spróbuj ponownie – Twoje dane są nadal w formularzu.', eClosed: 'Konkurs jest już zamknięty.'
     },
     en: {
-      copied: 'Copied!', sending: 'Sending…', closes: 'Entries close {d}', closedOn: 'Closed {d}',
+      copied: 'Copied!', sending: 'Sending…', closes: 'Entries close {d} · winner drawn & announced on Christmas Day', closedOn: 'Closed {d}',
       eName: 'Please enter your name.', ePhone: 'Please enter a valid phone number.', eEmail: 'Please enter a valid email.',
       eContact: 'Please choose how we should contact you.', eIg: 'Please add your Instagram username (you chose Instagram DM).',
       eTerms: 'Please accept the Terms & Conditions to enter.', eNet: 'Couldn’t send. Check your connection and try again – your details are still in the form.',
